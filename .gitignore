@@ -1,2 +1,5 @@
 # Brewfile install lock file
 Brewfile.lock.json
+
+# .DS_Store
+.DS_Store
