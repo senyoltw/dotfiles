@@ -11,6 +11,6 @@
     src: ~/dotfiles/{{ item }}
     dest: ~/{{ item }}
     state: link
-    with_items:
-      - .zshrc
-      - .zinit
+  with_items:
+    - .zshrc
+    - .zinit
