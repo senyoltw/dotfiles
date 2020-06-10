@@ -1,4 +1,4 @@
-# zinit
+# zinit (zinitがなくても大丈夫なようにifでくくる)
 if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   source ~/.zinit/bin/zinit.zsh
 
@@ -11,7 +11,7 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   # Ctrl+r でコマンド履歴を検索
   zinit load zdharma/history-search-multi-word
 
-  #コマンド補完
+  #コマンド自動補完
   zinit light zsh-users/zsh-autosuggestions
   zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
   zsh-users/zsh-completions
@@ -19,8 +19,7 @@ fi
 
 # history
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
-setopt hist_ignore_all_dups  # 重複するコマンド行は古い方を削除
-setopt share_history         # コマンド履歴ファイルを共有
+setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
 setopt hist_no_store         # historyコマンドは履歴に登録しない
 
 # alias
