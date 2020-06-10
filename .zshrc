@@ -1,4 +1,4 @@
-# zinit (zinitがなくても大丈夫なようにifでくくる)
+# zinit (zinitがなくてもエラー出ないようにifでくくる)
 # https://github.com/zdharma/zinit
 if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   source ~/.zinit/bin/zinit.zsh
@@ -28,6 +28,13 @@ setopt hist_ignore_dups      # 直前と同じコマンドラインはヒスト�
 setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
 setopt hist_no_store         # historyコマンドは履歴に登録しない
 setopt inc_append_history    # コマンドが入力されるとすぐに追加
+
+# cdr コマンドを有効
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ":chpwd:*" recent-dirs-max 500
+zstyle ":chpwd:*" recent-dirs-default true
+zstyle ":completion:*" recent-dirs-insert both
 
 # alias
 alias rm='rm -i'
