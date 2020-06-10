@@ -30,5 +30,4 @@ setopt inc_append_history    # コマンドが入力されるとすぐに追加
 alias ll='ls -al'
 alias sl='ls'
 alias grep='grep --color=auto'
-alias history='history 1'
 alias his='history'
