@@ -13,7 +13,7 @@
 # Ignore insecure directories and continue [y] or abort compinit [n]?
 - name: for zsh-completions
   file:
-    path: {{ item }}
+    path: "{{ item }}"
     mode: 755
   with_items:
     - /usr/local/share/zsh/site-functions
