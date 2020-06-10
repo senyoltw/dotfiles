@@ -8,9 +8,11 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
 
   # シンタックスハイライト
   zinit light zdharma/fast-syntax-highlighting
+  
+  autoload -Uz _zinit
+  (( ${+_comps} )) && _comps[zinit]=_zinit
 
-  autoload -Uz compinit
-  compinit
+  autoload -Uz compinit && compinit
 fi
 
 # history
