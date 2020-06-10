@@ -8,8 +8,8 @@
 
 - name: Link dotfiles
   file:
-    src: ~/dotfiles/"{{ item }}"
-    dest: ~/"{{ item }}"
+    src: ~/dotfiles/{{ item }}
+    dest: ~/{{ item }}
     state: link
     with_items:
       - .zshrc
