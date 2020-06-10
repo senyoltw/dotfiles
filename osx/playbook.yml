@@ -1,0 +1,7 @@
+---
+- name: Update dotfiles
+  git:
+    repo: https://github.com/senyoltw/dotfiles
+    dest: ~/dotfiles
+    update: yes
+    track_submodules: yes
