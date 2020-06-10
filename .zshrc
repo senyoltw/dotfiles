@@ -25,4 +25,6 @@ setopt hist_no_store         # historyコマンドは履歴に登録しない
 
 # alias
 alias ll='ls -l'
+alias sl='ls'
+alias grep='grep --color=auto'
 alias history='history 1'
