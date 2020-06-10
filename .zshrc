@@ -26,6 +26,7 @@ HISTSIZE=100000
 SAVEHIST=1000000
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
 setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
+setopt extended_history      # タイムスタンプを追加
 setopt hist_no_store         # historyコマンドは履歴に登録しない
 setopt inc_append_history    # コマンドが入力されるとすぐに追加
 
