@@ -33,7 +33,14 @@ setopt inc_append_history    # コマンドが入力されるとすぐに追加
 alias rm='rm -i'
 alias cp='cp -i'
 alias mv='mv -i'
-alias ll='ls -alF'
 alias sl='ls'
+case "${OSTYPE}" in
+freebsd*|darwin*)
+  alias ll="ls -alGF"
+  ;;
+linux*)
+  alias ll="ls -alF --color"
+  ;;
+esac
 alias grep='grep --color=auto'
 alias his='history'
