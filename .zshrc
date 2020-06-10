@@ -2,17 +2,19 @@
 if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   source ~/.zinit/bin/zinit.zsh
 
-  #コマンド補完
-  zinit light zsh-users/zsh-autosuggestions
-  zinit light zsh-users/zsh-completions
-
-  # シンタックスハイライト
-  zinit light zdharma/fast-syntax-highlighting
-  
   autoload -Uz _zinit
   (( ${+_comps} )) && _comps[zinit]=_zinit
 
-  autoload -Uz compinit && compinit
+  # シンタックスハイライト
+  zinit light zdharma/fast-syntax-highlighting
+
+  # Ctrl+r でコマンド履歴を検索
+  zinit load zdharma/history-search-multi-word
+
+  #コマンド補完
+  zinit light zsh-users/zsh-autosuggestions
+  zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
+  zsh-users/zsh-completions
 fi
 
 # history
