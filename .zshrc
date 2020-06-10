@@ -51,3 +51,4 @@ linux*)
 esac
 alias grep='grep --color=auto'
 alias his='history'
+alias update-dash='~/.dash/bin/update'
