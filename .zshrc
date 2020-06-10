@@ -18,6 +18,9 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   zsh-users/zsh-completions
 fi
 
+# コマンドがエラーだった場合エラーコードも出力
+setopt PRINT_EXIT_VALUE
+
 # history
 HISTSIZE=100000
 SAVEHIST=1000000
@@ -27,7 +30,10 @@ setopt hist_no_store         # historyコマンドは履歴に登録しない
 setopt inc_append_history    # コマンドが入力されるとすぐに追加
 
 # alias
-alias ll='ls -al'
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias ll='ls -alF'
 alias sl='ls'
 alias grep='grep --color=auto'
 alias his='history'
