@@ -1,4 +1,5 @@
 # zinit (zinitがなくても大丈夫なようにifでくくる)
+# https://github.com/zdharma/zinit
 if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   source ~/.zinit/bin/zinit.zsh
 
@@ -18,12 +19,15 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
 fi
 
 # history
+HISTSIZE=100000
+SAVEHIST=1000000
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
 setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
 setopt hist_no_store         # historyコマンドは履歴に登録しない
+setopt inc_append_history    # コマンドが入力されるとすぐに追加
 
 # alias
-alias ll='ls -l'
+alias ll='ls -al'
 alias sl='ls'
 alias grep='grep --color=auto'
 alias history='history 1'
