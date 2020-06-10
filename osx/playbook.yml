@@ -6,11 +6,7 @@
     update: yes
     track_submodules: yes
 
-- name: Link dotfiles
-  file:
-    src: ~/dotfiles/{{ item }}
-    dest: ~/{{ item }}
-    state: link
-  with_items:
-    - .zshrc
-    - .zinit
+# git updateした最新のplaybookを実行するため分割
+- name: Install dotfiles
+  include_tasks: ~/dotfiles/osx/install_dotfiles.yml
+
