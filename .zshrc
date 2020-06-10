@@ -30,13 +30,6 @@ setopt extended_history      # タイムスタンプを追加
 setopt hist_no_store         # historyコマンドは履歴に登録しない
 setopt inc_append_history    # コマンドが入力されるとすぐに追加
 
-# cdr コマンドを有効
-autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
-add-zsh-hook chpwd chpwd_recent_dirs
-zstyle ":chpwd:*" recent-dirs-max 500
-zstyle ":chpwd:*" recent-dirs-default true
-zstyle ":completion:*" recent-dirs-insert both
-
 # alias
 alias rm='rm -i'
 alias cp='cp -i'
