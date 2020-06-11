@@ -37,7 +37,7 @@
 
 # Update zinit
 - name: Update zinit
-  command: zinit self-update
+  command: "zinit self-update"
   register: result
   changed_when: 
     - '"Already up to date" not in result.stdout'
