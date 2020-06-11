@@ -50,4 +50,4 @@ alias his='history'
 # update command
 alias dotfiles-update='git -C ~/dotfiles/ pull ; zinit self-update'
 alias dash-update='~/.dash/bin/update'
-alias update-all=`dotfiles-update && dash-update`
+alias update-all='dotfiles-update && dash-update'
