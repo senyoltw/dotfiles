@@ -21,6 +21,12 @@ fi
 # コマンドがエラーだった場合エラーコードも出力
 setopt PRINT_EXIT_VALUE
 
+# 画面出力
+# 合成文字を正しく表示
+if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
+    setopt COMBINING_CHARS
+fi
+
 # history
 HISTSIZE=1000                # zshターミナルメモリ上で記憶しておく件数
 SAVEHIST=10000               # zsh_history上で記憶しておく件数
