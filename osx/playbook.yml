@@ -1,30 +1,13 @@
 ---
-# dotfilesのupdate
+# dotfilesのgit管理はdotfiles自体で管理したいため、submodulesを引っ張ってくるだけにする
 - name: Install dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
-    update: yes
+    update: no
     track_submodules: yes
 
-# シンボリックリンクを張るファイルは明示的に宣言
-- name: Link dotfiles
-  file:
-    src: ~/dotfiles/{{ item }}
-    dest: ~/{{ item }}
-    state: link
-  with_items:
-    - .zshrc
-    - .zinit
-
-# for zsh compinit err fix
-# err msg -> zsh compinit: insecure directories, run compaudit for list. 
-# Ignore insecure directories and continue [y] or abort compinit [n]?
-- name: for zsh compinit err fix
-  file:
-    path: "{{ item }}"
-    mode: 0755
-  with_items:
-    - /usr/local/share/zsh/site-functions
-    - /usr/local/share/zsh
+# git updateした最新のplaybookを実行するため分割
+- name: Install dotfiles
+  include_tasks: ~/dotfiles/osx/install_dotfiles.yml
 
