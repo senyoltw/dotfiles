@@ -14,10 +14,6 @@
     track_submodules: yes
   when: not dotfiles_zinit.stat.exists
 
-# git updateした最新のplaybookを実行するため分割
-- name: Install dotfiles
-  include_tasks: ~/dotfiles/osx/install_dotfiles.yml
-
 # シンボリックリンクを張るファイルは明示的に宣言
 - name: Link dotfiles
   file:
