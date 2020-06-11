@@ -22,8 +22,8 @@ fi
 setopt PRINT_EXIT_VALUE
 
 # history
-HISTSIZE=1000
-SAVEHIST=10000
+HISTSIZE=1000                # zshターミナルメモリ上で記憶しておく件数
+SAVEHIST=10000               # zsh_history上で記憶しておく件数
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
 setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
 setopt extended_history      # タイムスタンプを追加
