@@ -34,10 +34,3 @@
   with_items:
     - /usr/local/share/zsh/site-functions
     - /usr/local/share/zsh
-
-# Update zinit
-- name: Update zinit
-  command: "zinit self-update"
-  register: result
-  changed_when: 
-    - '"Already up to date" not in result.stdout'
