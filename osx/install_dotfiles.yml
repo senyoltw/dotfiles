@@ -1,0 +1,21 @@
+---
+# シンボリックリンクを張るファイルは明示的に宣言
+- name: Link dotfiles
+  file:
+    src: ~/dotfiles/{{ item }}
+    dest: ~/{{ item }}
+    state: link
+  with_items:
+    - .zshrc
+    - .zinit
+
+# for zsh err fix
+# zsh compinit: insecure directories, run compaudit for list.
+# Ignore insecure directories and continue [y] or abort compinit [n]?
+- name: for zsh-completions
+  file:
+    path: "{{ item }}"
+    mode: 0755
+  with_items:
+    - /usr/local/share/zsh/site-functions
+    - /usr/local/share/zsh
