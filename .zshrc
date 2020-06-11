@@ -27,6 +27,9 @@ if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
     setopt COMBINING_CHARS
 fi
 
+# 補完のときに小文字でも大文字の候補を補完
+zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
 # history
 HISTSIZE=1000                # zshターミナルメモリ上で記憶しておく件数
 SAVEHIST=10000               # zsh_history上で記憶しておく件数
