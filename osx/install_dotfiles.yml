@@ -1,4 +1,5 @@
 ---
+# シンボリックリンクを張るファイルは明示的に宣言
 - name: Link dotfiles
   file:
     src: ~/dotfiles/{{ item }}
