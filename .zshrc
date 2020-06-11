@@ -25,10 +25,11 @@ setopt PRINT_EXIT_VALUE
 HISTSIZE=1000                # zshターミナルメモリ上で記憶しておく件数
 SAVEHIST=10000               # zsh_history上で記憶しておく件数
 setopt hist_ignore_dups      # 直前と同じコマンドラインはヒストリに追加しない
-setopt share_history         # コマンド履歴ファイルを他のターミナルと共有
 setopt extended_history      # タイムスタンプを追加
 setopt hist_no_store         # historyコマンドは履歴に登録しない
-setopt inc_append_history    # コマンドが入力されるとすぐに追加
+# share_history と inc_append_history は排他関係
+# setopt share_history         # コマンド履歴を他のターミナルのメモリと共有
+setopt inc_append_history    # コマンドが入力されるとすぐにzsh_historyに追加
 
 # alias
 alias rm='rm -i'
