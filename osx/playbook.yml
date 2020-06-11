@@ -1,11 +1,26 @@
 ---
+# zinitがインストール済みか確認
+- name: Check dotfiles Makefile
+  stat:
+    path: ~/dotfiles/.zinit/bin/zinit.zsh
+  register: dotfiles_zinit
+
+# dotfilesのInstall
+- name: Install dotfiles
+  git:
+    repo: https://github.com/senyoltw/dotfiles
+    dest: ~/dotfiles
+    update: yes
+    track_submodules: yes
+  when: not dotfiles_zinit.stat.exists
+
 # dotfilesのUpdate
 - name: Update dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
     update: yes
-    track_submodules: yes
+  when: dotfiles_zinit.stat.exists
 
 # git updateした最新のplaybookを実行するため分割
 - name: Install dotfiles
