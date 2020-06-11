@@ -1,9 +1,10 @@
 ---
-- name: Update dotfiles
+# dotfilesのgit管理はdotfiles自体で管理したいため、submodulesを引っ張ってくるだけにする
+- name: Install dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
-    update: yes
+    update: no
     track_submodules: yes
 
 # git updateした最新のplaybookを実行するため分割
