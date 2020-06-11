@@ -48,8 +48,8 @@ alias grep='grep --color=auto'
 alias his='history'
 
 # update command
+alias dotfiles-update='git -C ~/dotfiles/ pull'
 dash-update() {
-  git -C ~/dotfiles/ pull
   ~/.dash/bin/update
   zinit self-update
 }
