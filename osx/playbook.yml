@@ -14,7 +14,7 @@
     track_submodules: yes
   when: not dotfiles_zinit.stat.exists
 
-# シンボリックリンクを張るファイルは明示的に宣言
+# シンボリックリンクを張るファイル/フォルダは明示的に宣言
 - name: Link dotfiles
   file:
     src: ~/dotfiles/{{ item }}
