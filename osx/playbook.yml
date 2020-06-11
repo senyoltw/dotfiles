@@ -4,7 +4,6 @@
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
     update: yes
-    force: yes
     track_submodules: yes
 
 # git updateした最新のplaybookを実行するため分割
