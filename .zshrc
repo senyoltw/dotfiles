@@ -57,6 +57,7 @@ alias grep='grep --color=auto'
 alias his='history'
 
 # update command
+alias make-brewfile='brew bundle dump && mv ~/Brewfile ~/dotfiles/osx'
 alias update-dotfiles='git -C ~/dotfiles/ pull ; zinit self-update'
 alias update-dash='~/.dash/bin/update'
 alias update-all='dotfiles-update && dash-update'
