@@ -46,4 +46,10 @@ linux*)
 esac
 alias grep='grep --color=auto'
 alias his='history'
-alias dash-update='~/.dash/bin/update ; zinit self-update'
+
+# update command
+dash-update() {
+  git -C ~/dotfiles/ pull
+  ~/.dash/bin/update
+  zinit self-update
+}
