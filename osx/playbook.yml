@@ -1,18 +1,11 @@
 ---
-# zinitがインストール済みか確認
-- name: Check dotfiles zinit
-  stat:
-    path: ~/dotfiles/.zinit/bin/zinit.zsh
-  register: dotfiles_zinit
-
 # dotfilesのInstall
-# 更新はdotfiles側でやりたいので最初だけしかしない
 - name: Install dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
+    update: yes
     track_submodules: yes
-  when: not dotfiles_zinit.stat.exists
 
 # シンボリックリンクを張るファイル/フォルダは明示的に宣言
 - name: Link dotfiles
