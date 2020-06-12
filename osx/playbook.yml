@@ -1,6 +1,6 @@
 ---
 # dotfilesのInstall
-- name: Install dotfiles
+- name: Install or Update dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
     dest: ~/dotfiles
