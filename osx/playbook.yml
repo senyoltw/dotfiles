@@ -7,7 +7,6 @@
 
 # dotfilesのInstall
 # 更新はdotfiles側でやりたいので最初だけしかしない
-# zinit側の変更もあり、git -C ~/dotfiles/ pull での更新のほうがうまくいく
 - name: Install dotfiles
   git:
     repo: https://github.com/senyoltw/dotfiles
