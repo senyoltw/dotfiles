@@ -16,19 +16,19 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   zinit light zsh-users/zsh-autosuggestions
   zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
   zsh-users/zsh-completions
+
+  # 補完のときに小文字でも大文字の候補を補完
+  zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 fi
 
 # コマンドがエラーだった場合エラーコードも出力
-setopt PRINT_EXIT_VALUE
+setopt print_exit_value
 
 # 画面出力
 # 合成文字を正しく表示
 if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
-    setopt COMBINING_CHARS
+    setopt combining_chars
 fi
-
-# 補完のときに小文字でも大文字の候補を補完
-zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
 # history
 HISTSIZE=1000                # zshターミナルメモリ上で記憶しておく件数
