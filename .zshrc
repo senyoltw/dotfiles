@@ -19,6 +19,9 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
 
   # 補完のときに小文字でも大文字の候補を補完
   zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
+
+  # update dotfiles
+  alias update-dotfiles='git -C ~/dotfiles/ pull ; zinit self-update && zinit update'
 fi
 
 # コマンドがエラーだった場合エラーコードも出力
@@ -59,6 +62,5 @@ alias his='history'
 
 # update command
 alias make-brewfile='brew bundle dump && mv ./Brewfile ~/dotfiles/osx'
-alias update-dotfiles='git -C ~/dotfiles/ pull ; zinit self-update && zinit update'
 alias update-dash='~/.dash/bin/update'
 alias update-all='update-dotfiles && update-dash'
