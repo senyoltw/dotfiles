@@ -63,4 +63,4 @@ alias his='history'
 # update command
 alias make-brewfile='brew bundle dump && mv ./Brewfile ~/dotfiles/osx'
 alias update-dash='~/.dash/bin/update'
-alias update-all='update-dotfiles && update-dash'
+alias update-all='update-dash && update-dotfiles'
