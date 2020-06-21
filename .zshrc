@@ -24,6 +24,12 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   alias update-dotfiles='git -C ~/dotfiles/ pull ; zinit self-update && zinit update'
 fi
 
+# Google Cloud SDK
+if  [ -e /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/ ]; then
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
+    source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
+fi
+
 # コマンドがエラーだった場合エラーコードも出力
 setopt print_exit_value
 
