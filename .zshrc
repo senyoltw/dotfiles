@@ -41,6 +41,9 @@ fi
 # コマンドがエラーだった場合エラーコードも出力
 setopt print_exit_value
 
+# 補完候補表示時にビープ音を鳴らさない
+setopt nolistbeep
+
 # 画面出力
 # 合成文字を正しく表示
 if [[ "$(locale LC_CTYPE)" == "UTF-8" ]]; then
