@@ -29,7 +29,7 @@ if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
   alias update-brewfile='brew bundle dump && mv ./Brewfile ~/dotfiles/osx'
   alias update-dotfiles='git -C ~/dotfiles/ pull'
   alias update-dash='~/.dash/bin/update'
-  alias update-all='update-dotfiles && update-dash && update-zinit'
+  alias update-all='update-dotfiles && update-zinit && update-dash'
 fi
 
 # Google Cloud SDK
