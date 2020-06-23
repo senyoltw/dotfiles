@@ -21,7 +21,15 @@ if  [ -e ~/.zinit/bin/zinit.zsh ]; then
   zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
 
   # update dotfiles
-  alias update-dotfiles='git -C ~/dotfiles/ pull ; zinit self-update && zinit update'
+  alias update-zinit='zinit self-update && zinit update'
+fi
+
+# update command
+if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
+  alias update-brewfile='brew bundle dump && mv ./Brewfile ~/dotfiles/osx'
+  alias update-dotfiles='git -C ~/dotfiles/ pull'
+  alias update-dash='~/.dash/bin/update'
+  alias update-all='update-dotfiles && update-dash && update-zinit'
 fi
 
 # Google Cloud SDK
@@ -65,8 +73,3 @@ linux*)
 esac
 alias grep='grep --color=auto'
 alias his='history'
-
-# update command
-alias make-brewfile='brew bundle dump && mv ./Brewfile ~/dotfiles/osx'
-alias update-dash='~/.dash/bin/update'
-alias update-all='update-dash && update-dotfiles'
