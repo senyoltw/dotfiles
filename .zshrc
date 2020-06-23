@@ -26,7 +26,7 @@ fi
 
 # update command
 if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
-  alias update-brewfile='brew bundle dump -f ; diff -u ./Brewfile ~/dotfiles/osx ; mv ./Brewfile ~/dotfiles/osx'
+  alias update-brewfile='brew bundle dump -f && diff -u ./Brewfile ~/dotfiles/osx ; mv ./Brewfile ~/dotfiles/osx'
   alias update-dotfiles='git -C ~/dotfiles/ pull'
   alias update-dash='~/.dash/bin/update'
   alias update-all='update-dotfiles && update-zinit && update-dash'
