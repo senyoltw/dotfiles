@@ -17,6 +17,7 @@ cask "google-japanese-ime"
 cask "karabiner-elements"
 cask "visual-studio-code"
 cask "vivaldi"
+cask "zoomus"
 mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
