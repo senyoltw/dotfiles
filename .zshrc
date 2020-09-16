@@ -76,3 +76,6 @@ linux*)
 esac
 alias grep='grep --color=auto'
 alias his='history'
+
+# nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
