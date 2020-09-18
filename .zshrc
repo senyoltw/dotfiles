@@ -77,4 +77,6 @@ alias grep='grep --color=auto'
 alias his='history'
 
 # nodebrew
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+if  [ -e $HOME/.nodebrew/current/bin ]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
