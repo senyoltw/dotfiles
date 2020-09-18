@@ -37,6 +37,13 @@ if  [ -e /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/ ]; then
   source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
+# nodebrew
+if  [ -e $HOME/.nodebrew/current/bin ]; then
+  export PATH=$HOME/.nodebrew/current/bin:$PATH
+fi
+
+### 以下zshのデフォルトオプション群
+
 # コマンドがエラーだった場合エラーコードも出力
 setopt print_exit_value
 
@@ -75,8 +82,3 @@ linux*)
 esac
 alias grep='grep --color=auto'
 alias his='history'
-
-# nodebrew
-if  [ -e $HOME/.nodebrew/current/bin ]; then
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
-fi
