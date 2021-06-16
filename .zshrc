@@ -42,6 +42,11 @@ if  [ -e $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
+# podman on mac
+# https://www.redhat.com/sysadmin/replace-docker-podman-macos
+export CONTAINER_HOST=ssh://vagrant@127.0.0.1:2222/run/podman/podman.sock
+export CONTAINER_SSHKEY=/Users/tawatana/tools/podman/.vagrant/machines/default/virtualbox/private_key
+
 ### 以下zshのデフォルトオプション群
 
 # コマンドがエラーだった場合エラーコードも出力
