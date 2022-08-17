@@ -1,34 +1,8 @@
-# zinit (zinitがなくてもエラー出ないようにifでくくる)
-# https://github.com/zdharma/zinit
-if  [ -e ~/.zinit/bin/zinit.zsh ]; then
-  source ~/.zinit/bin/zinit.zsh
-
-  autoload -Uz _zinit
-  (( ${+_comps} )) && _comps[zinit]=_zinit
-
-  # シンタックスハイライト
-  zinit light zdharma/fast-syntax-highlighting
-
-  # Ctrl+r でコマンド履歴を検索
-  zinit load zdharma/history-search-multi-word
-
-  #コマンド自動補完
-  zinit light zsh-users/zsh-autosuggestions
-  zinit wait lucid atload"zicompinit; zicdreplay" blockf for \
-  zsh-users/zsh-completions
-
-  # 補完のときに小文字でも大文字の候補を補完
-  zstyle ':completion:*' matcher-list 'm:{[:lower:]}={[:upper:]}'
-
-  # update dotfiles
-  alias update-zinit='zinit self-update && zinit update'
-fi
-
 # update command
 if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
   alias update-dash-brewfile='brew bundle dump -f && diff -u ~/dotfiles/osx ./Brewfile ; mv ./Brewfile ~/dotfiles/osx'
   alias update-dash-dotfiles='git -C ~/dotfiles/ pull'
-  alias update-dash='update-dash-dotfiles && update-zinit && ~/.dash/bin/update'
+  alias update-dash='update-dash-dotfiles && ~/.dash/bin/update'
 fi
 
 # Google Cloud SDK

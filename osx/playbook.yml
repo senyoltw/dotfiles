@@ -15,7 +15,6 @@
     state: link
   with_items:
     - .zshrc
-    - .zinit
 
 # for zsh compinit err fix
 # err msg -> zsh compinit: insecure directories, run compaudit for list.
