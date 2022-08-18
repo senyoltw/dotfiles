@@ -1,6 +1,6 @@
 # update command
 if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
-  alias update-dash-brewfile='brew bundle dump -f && diff -u ~/dotfiles/osx ./Brewfile ; mv ./Brewfile ~/dotfiles/osx'
+  alias update-dash-brewfile='brew bundle dump --all -f && diff -u ~/dotfiles/osx ./Brewfile ; mv ./Brewfile ~/dotfiles/osx'
   alias update-dash-dotfiles='git -C ~/dotfiles/ pull'
   alias update-dash='update-dash-dotfiles && ~/.dash/bin/update'
 fi
@@ -11,15 +11,15 @@ if  [ -e /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/ ]; then
   source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
 fi
 
+# homebrew
+if  [ -e /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 # nodebrew
 if  [ -e $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
-
-# podman on mac
-# https://www.redhat.com/sysadmin/replace-docker-podman-macos
-export CONTAINER_HOST=ssh://vagrant@127.0.0.1:2222/run/podman/podman.sock
-export CONTAINER_SSHKEY=/Users/tawatana/tools/podman/.vagrant/machines/default/virtualbox/private_key
 
 ### 以下zshのデフォルトオプション群
 
