@@ -5,12 +5,6 @@ if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
   alias update-dash='update-dash-dotfiles && ~/.dash/bin/update'
 fi
 
-# Google Cloud SDK
-if  [ -e /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/ ]; then
-  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/path.zsh.inc"
-  source "/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc"
-fi
-
 # homebrew
 if  [ -e /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
