@@ -54,4 +54,4 @@ linux*)
   ;;
 esac
 alias grep='grep --color=auto'
-alias his='history -n 100'
+alias his='history -100'
