@@ -15,6 +15,13 @@ if  [ -e $HOME/.nodebrew/current/bin ]; then
   export PATH=$HOME/.nodebrew/current/bin:$PATH
 fi
 
+# pyenv
+if  [ -e $HOME/.pyenv ]; then
+  export PYENV_ROOT="$HOME/.pyenv"
+  command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+  eval "$(pyenv init -)"
+fi
+
 ### 以下zshのデフォルトオプション群
 
 # コマンドがエラーだった場合エラーコードも出力
