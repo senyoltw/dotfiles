@@ -21,7 +21,6 @@ cask "google-japanese-ime"
 cask "karabiner-elements"
 cask "keepingyouawake"
 cask "vagrant"
-cask "virtualbox"
 cask "visual-studio-code"
 cask "vivaldi"
 mas "Keka", id: 470158793
