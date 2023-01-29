@@ -1,10 +1,3 @@
-# update command
-if  [ -e ~/.dash ] && [ -e ~/dotfiles ]; then
-  alias update-dash-brewfile='brew bundle dump --all -f && diff -u ~/dotfiles/osx ./Brewfile ; mv ./Brewfile ~/dotfiles/osx'
-  alias update-dash-dotfiles='git -C ~/dotfiles/ pull'
-  alias update-dash='update-dash-dotfiles && ~/.dash/bin/update'
-fi
-
 # homebrew
 if  [ -e /opt/homebrew/bin/brew ]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
@@ -61,4 +54,4 @@ linux*)
   ;;
 esac
 alias grep='grep --color=auto'
-alias his='history -100'
+alias his='history -1000'
