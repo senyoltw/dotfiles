@@ -13,9 +13,6 @@ cask "keepingyouawake"
 cask "visual-studio-code"
 cask "vivaldi"
 mas "Keka", id: 470158793
-mas "Keynote", id: 409183694
 mas "Kindle", id: 405399194
 mas "Magnet", id: 441258766
-mas "Numbers", id: 409203825
-mas "Pages", id: 409201541
 mas "RunCat", id: 1429033973
