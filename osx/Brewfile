@@ -1,6 +1,8 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
+brew "ansible"
+brew "git"
 brew "mas"
 brew "podman"
 brew "tree"
