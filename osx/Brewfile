@@ -14,6 +14,7 @@ cask "karabiner-elements"
 cask "keepingyouawake"
 cask "visual-studio-code"
 cask "vivaldi"
+mas "1Password 7", id: 1333542190
 mas "Focalboard", id: 1556908618
 mas "Keka", id: 470158793
 mas "Kindle", id: 405399194
