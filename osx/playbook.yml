@@ -19,10 +19,10 @@
 # for zsh compinit err fix
 # err msg -> zsh compinit: insecure directories, run compaudit for list.
 # Ignore insecure directories and continue [y] or abort compinit [n]?
-- name: for zsh compinit err fix
-  file:
-    path: "{{ item }}"
-    mode: 0755
-  with_items:
-    - /usr/local/share/zsh/site-functions
-    - /usr/local/share/zsh
+# - name: for zsh compinit err fix
+#  file:
+#    path: "{{ item }}"
+#    mode: 0755
+#  with_items:
+#    - /usr/local/share/zsh/site-functions
+#    - /usr/local/share/zsh
